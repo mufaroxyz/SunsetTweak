@@ -48,7 +48,7 @@ class LoadHook: ClassHook<RCTCxxBridge> {
 
     let documentDirectory = getDocumentDirectory()
 
-    var vendetta = try? Data(contentsOf: documentDirectory.appendingPathComponent("vendetta.js"))
+    var vendetta = try? Data(contentsOf: documentDirectory.appendingPathComponent("sunset.js"))
 
     let group = DispatchGroup()
 
@@ -61,7 +61,7 @@ class LoadHook: ClassHook<RCTCxxBridge> {
       vendettaUrl = loaderConfig.customLoadUrl.url
     } else {
       vendettaUrl = URL(
-        string: "https://raw.githubusercontent.com/vendetta-mod/builds/master/vendetta.js")!
+        string: "https://raw.githubusercontent.com/sunset-mod/builds/master/sunset.js")!
     }
 
     os_log("Fetching vendetta.js", log: vendettaLog, type: .info)
@@ -76,9 +76,9 @@ class LoadHook: ClassHook<RCTCxxBridge> {
 
     let vendettaTask = URLSession.shared.dataTask(with: vendettaRequest) { data, response, error in
       if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
-        os_log("Successfully fetched vendetta.js", log: vendettaLog, type: .debug)
+        os_log("Successfully fetched sunset.js", log: vendettaLog, type: .debug)
         vendetta = data
-        try? vendetta?.write(to: documentDirectory.appendingPathComponent("vendetta.js"))
+        try? vendetta?.write(to: documentDirectory.appendingPathComponent("sunset.js"))
 
         let etag = httpResponse.allHeaderFields["Etag"] as? String
         try? etag?.write(
@@ -103,10 +103,10 @@ class LoadHook: ClassHook<RCTCxxBridge> {
     }
 
     if vendetta != nil {
-      os_log("Executing vendetta.js", log: vendettaLog, type: .info)
+      os_log("Executing sunset.js", log: vendettaLog, type: .info)
       orig.executeApplicationScript(vendetta!, url: source, async: async)
     } else {
-      os_log("Unable to fetch vendetta.js", log: vendettaLog, type: .error)
+      os_log("Unable to fetch sunset.js", log: vendettaLog, type: .error)
     }
   }
 }
