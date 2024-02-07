@@ -4,10 +4,12 @@ A rootful/rootless tweak to inject Sunset into Discord.
 
 ## Installation
 
+
 ### Jailbroken (Rootful/Rootless)
 
 1. Install Orion runtime via your preferred package manager, by adding `https://repo.chariz.com/` to your sources, then finding `Orion Runtime`.
 1. Install Sunset by downloading the appropriate `.deb` file (or by building your own, see [Building SunsetTweak locally](#building-sunsettweak-locally)). Use the file ending in `arm.deb` for rootful jailbreaks, and the file ending in `arm64.deb` for rootless jailbreaks.
+
 
 ### Non-Jailbroken
 
@@ -17,6 +19,7 @@ A rootful/rootless tweak to inject Sunset into Discord.
 1. Extract or obtain a decrypted Discord IPA. To extract the IPA from a jailbroken iDevice, we recommend [bagbak](https://github.com/ChiChou/bagbak).
 1. Run `./azule -i <path to decrypted IPA> -o <path to output folder> -f <path to Orion deb> <path to Sunset deb>`. Make sure to provide the full paths to the files (you cannot use relative paths unfortunately). Example: `./azule -i /Users/sunset/IPA/Discord.ipa -o /Users/sunset/IPA/SunsetDiscord -f /Users/sunset/IPA/dev.theos.orion14_1.0.1_iphoneos-arm.deb /Users/sunset/IPA/dev.beefers.sunset_0.0.2_iphoneos-arm.deb`
 1. Install the generated IPA using your preferred sideloading method (at the time of writing this, only Sideloadly works).
+
 
 ## Building SunsetTweak locally
 
@@ -52,6 +55,7 @@ If you've already installed theos, you can run `$THEOS/bin/update-theos` to make
 The first time you run this, it might take a bit longer, but subsequent builds should be much faster.
 
 The resulting `.deb` files will be in the `packages` folder. As a reminder, `*arm.deb` is for rootful jailbreaks and sideloading, and `*arm64.deb` is for rootless jailbreaks.
+
 
 ## Contributing
 
