@@ -18,7 +18,7 @@ struct LoaderConfig: Codable {
 let defaultLoaderConfig = LoaderConfig(
   customLoadUrl: CustomLoadUrl(
     enabled: false,
-    url: URL(string: "http://localhost:4040/vendetta.js")!
+    url: URL(string: "http://localhost:4040/sunset.js")!
   ),
   loadReactDevTools: false
 )
