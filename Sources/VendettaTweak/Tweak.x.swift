@@ -6,9 +6,9 @@ let vendettaLog = OSLog(subsystem: Bundle.main.bundleIdentifier!, category: "ven
 let source = URL(string: "vendetta")!
 
 let install_prefix = String(cString: get_install_prefix())
-let isJailbroken = FileManager.default.fileExists(atPath: "\(install_prefix)/Library/Application Support/VendettaTweak/VendettaPatches.bundle")
+let isJailbroken = FileManager.default.fileExists(atPath: "\(install_prefix)/Library/Application Support/VendettaTweak/SunsetPatches.bundle")
 
-let vendettaPatchesBundlePath = isJailbroken ? "\(install_prefix)/Library/Application Support/VendettaTweak/VendettaPatches.bundle" : "\(Bundle.main.bundleURL.path)/VendettaPatches.bundle"
+let vendettaPatchesBundlePath = isJailbroken ? "\(install_prefix)/Library/Application Support/VendettaTweak/SunsetPatches.bundle" : "\(Bundle.main.bundleURL.path)/SunsetPatches.bundle"
 
 class FileManagerLoadHook: ClassHook<FileManager> {
   func containerURLForSecurityApplicationGroupIdentifier(_ groupIdentifier: NSString?) -> URL? {
